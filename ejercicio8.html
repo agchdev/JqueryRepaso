@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .orden{
+            display: flex;
+        }
+        img{
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("<img>").appendTo("body");
+            $("img").attr("src", "img/barsa.png");
+            const imganes = [ "img/RealMadrid.webp", "img/Granada.png", "img/escudo-bordado-betis.jpg","img/barsa.png"]
+            $("<div>").appendTo("body");
+            $("<button>Anterior</button>").appendTo("div");
+            $("<button>Siguiente</button>").appendTo("div");
+            $("div").attr("class", "orden")
+            let cont = 0;
+            let max = imganes.length - 1;
+            $("button:nth-child(1)").on("click", function(){
+                cont++;
+                if(cont>max) cont=0;
+                console.log(cont)
+                $("img").attr("src", imganes[cont]);
+            })
+            $("button:nth-child(2)").on("click", function(){
+                cont--;
+                if(cont<0) cont=max;
+                console.log(cont)
+                $("img").attr("src", imganes[cont]);
+            })
+        })
+    </script>
+</body>
+</html>

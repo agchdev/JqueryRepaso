@@ -8,7 +8,17 @@
 <body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-        
+        $(function(){
+            $("<button>Click</button>").appendTo("body");
+
+            $("button").click(function(){
+                // Color aleatorio
+                var r = Math.floor(Math.random() * 255);
+                var g = Math.floor(Math.random() * 255);
+                var b = Math.floor(Math.random() * 255);
+                $("body").css("background-color", "rgb(" + r + "," + g + "," + b + ")");
+            });
+        });
     </script>
 </body>
 </html>

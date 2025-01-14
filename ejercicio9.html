@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("<ul>").appendTo("body");
+            let lista = ["hola", "adios", "palabra", "coche", "juguete"];
+            lista.forEach(el => {
+                $("<li>" + el + "</li>").appendTo("ul");
+            });
+            $("li").on("mouseover", function() {
+                var r = Math.floor(Math.random() * 255);
+                var g = Math.floor(Math.random() * 255);
+                var b = Math.floor(Math.random() * 255);
+                $(this).css("color", "rgb(" + r + "," + g + "," + b + ")");           
+            })
+        })
+    </script>
+</body>
+</html>

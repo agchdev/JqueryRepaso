@@ -18,8 +18,8 @@
     <script>
         $(function(){
             $('<div></div>').appendTo('body');
-            $('div').on('click', () => {
-                $(this).animate({ left: "300px"}, 1000)
+            $('div').on('mouseover', function(){
+                $(this).animate({ width: "200px", height:"200px", opacity: .5}, 1000)
             })
         })
     </script>

@@ -18,8 +18,8 @@
     <script>
         $(function(){
             $('<div></div>').appendTo('body');
-            $('div').on('click', () => {
-                $('div').animate({ left: "300px"}, 1000)
+            $('div').on('click', function(){
+                $(this).animate({ left: "300px"}, 1000)
             })
         })
     </script>

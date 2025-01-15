@@ -14,7 +14,7 @@
         }
         .container{
             position: absolute;
-            top: 10px;
+            top: 0;
             width: 100%;
             height: 20px;
             background-color: red;
@@ -29,7 +29,8 @@
             $('<div></div>').appendTo('body')
             $('div').addClass('container')
             $('.container').on('click', function(){
-                $('.container').animate({top: "100px"}), 100;
+                $(this).animate({top: $(this).css("top") == "100px" ? "0px" : "100px"}, 100);
+                console.log($(this).css("top"))
             })
         })
     </script>

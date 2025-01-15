@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "system-ui";
+            min-height: 100vh;
+            align-content: center;
+        }
+
+        .carrousel {
+            max-width: 1000px;
+            height: 400px;
+            margin: auto;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, .4);
+            overflow: hidden;
+            position: relative;
+
+            .imagenes{
+                display: flex;
+                transition: transform 1s cubic-bezier(.39,.01,.49,.98);
+            }
+            .next, .prev{
+                margin: 10px;
+                padding: 10px 20px;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: rgba(197, 197, 197, 0.154);
+                backdrop-filter: blur(10px);
+                color: white;
+                border: 1px solid rgba(255, 255, 255, 0.397);
+                border-radius: 1rem;
+                font-size: 1rem;
+                cursor: pointer;
+            }
+            .next{
+                right: 0;
+            }
+        }
+        .eventNone{
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="carrousel">
+
+        <div class="imagenes">
+            <img src="https://picsum.photos/id/206/1000/400" alt="">
+            <img src="https://picsum.photos/id/200/1000/400" alt="">
+            <img src="https://picsum.photos/id/216/1000/400" alt="">
+        </div>
+
+        <div class="navegation">
+            <button class="next">Siguiente</button>
+            <button class="prev">Anterior</button>
+        </div>
+
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+            var inidceActual = 0;
+            var imagenes = $(".imagenes img");
+            var imgTotal = imagenes.length;
+
+            function mover(){
+                $('.imagenes').css("transform", `translateX(${-inidceActual * 1000}px)`);
+            }
+
+            function comp(){
+                if(inidceActual == imgTotal-1) $(".next").hide();
+                else $(".next").show();
+                if(inidceActual == 0) $(".prev").hide();
+                else $(".prev").show();
+            }
+            
+            comp();
+
+            $(".next").on("click", function(){
+                if(inidceActual < imgTotal -1){
+                    inidceActual++;
+                    comp();
+                    mover();
+                }
+            });
+
+            $('.prev').on('click', function(){
+                if(inidceActual > 0){
+                    inidceActual--;
+                    comp();
+                    mover();
+                }
+            });
+        })
+    </script>
+</body>
+
+</html>

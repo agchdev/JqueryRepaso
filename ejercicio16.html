@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" name="busca">
+    <ul>
+        <li>conejo</li>
+        <li>Maite</li>
+        <li>Pablo</li>
+        <li>Alejandro</li>
+        <li>Paco</li>
+    </ul>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            const li = $('li')
+            console.log(li)
+            $('input').on("input", (e) => {
+                let palabra = $(e.target).val()
+                li.each(function (i, e) {
+                    if ($(e).text().toLowerCase().includes(palabra.toLowerCase())) {
+                        $(e).removeClass('hide')
+                    } else {
+                        $(e).addClass('hide')
+                    }
+                });
+            })
+        });
+    </script>
+</body>
+
+</html>

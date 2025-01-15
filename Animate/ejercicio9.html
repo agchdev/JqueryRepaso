@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.min.js"></script>
+
+    <script>
+        $(function () {
+            $('<div></div>').appendTo('body');
+            $('div').on('click', function () {
+                $(this)
+                    .animate({ left: "50px" }, 500)
+                    .animate({ backgroundColor: "blue" }, 500)
+                    .animate({ left: "0px" }, 500)
+                    .animate({ backgroundColor: "red" }, 500)
+            })
+        })
+    </script>
+</body>
+
+</html>

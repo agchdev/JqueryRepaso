@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg{
+            background-color: red;
+            height: 100px;
+            width: 30px;
+        }
+        .container{
+            width: 800px;
+            height: 100px;
+            border: 1px solid black;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("<div></div>").appendTo("body");
+            $("div").attr("class", "container");
+            $("<div></div>").appendTo("div");
+            $("div > div").attr("class", "bg");
+            $("<button>Click</button>").appendTo("body");
+
+            let porcentaje = 0;
+
+            $("button").on("click", function(){
+                $(".bg").css("width", `${porcentaje}px`)
+                if(porcentaje > 200 && porcentaje < 400){
+                    $(".bg").css("background-color", `yellow`)
+                }
+                if(porcentaje > 400){
+                    $(".bg").css("background-color", `green`)
+                }
+                porcentaje+=100;
+            });
+        });
+    </script>
+</body>
+</html>

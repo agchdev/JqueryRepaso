@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "system-ui";
+            min-height: 100vh;
+            align-content: center;
+        }
+
+        .carrousel {
+            max-width: 1000px;
+            height: 400px;
+            margin: auto;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, .4);
+            overflow: hidden;
+            position: relative;
+
+            .imagenes{
+                display: flex;
+                transition: transform 1s cubic-bezier(.39,.01,.49,.98);
+            }
+            .next, .prev{
+                margin: 10px;
+                padding: 10px 20px;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: rgba(197, 197, 197, 0.154);
+                backdrop-filter: blur(10px);
+                color: white;
+                border: 1px solid rgba(255, 255, 255, 0.397);
+                border-radius: 1rem;
+                font-size: 1rem;
+                cursor: pointer;
+            }
+            .next{
+                right: 0;
+            }
+        }
+        .eventNone{
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        // $(function() {
+        //     // AJAX
+        //     var ul = $("<ul>");
+        //     var miApi = "https://dummyjson.com/products"
+
+        //     $.ajax({
+        //         type: "GET",
+        //         url: miApi,
+        //         success:function(respuesta){
+        //             $(respuesta.products).each(function(i, e){
+        //                 console.log(i);
+        //                 ul.append(`<li>${e.title}<li>`)
+        //             });
+        //             $("body").append(ul);
+        //         }
+        //     })
+        // })
+
+        $(function(){
+            var miUrl = "https://dummyjson.com/users"
+            var ul = $("<ul>")
+            
+            $.ajax({
+                type: "GET",
+                url: miUrl,
+                success: function(respuesta){
+                    console.log(respuesta.users);
+                    $(respuesta.users).each(function(i,e){
+                        $(`<li>${e.age}</li>`).appendTo(ul)
+                    })
+                    $(ul).appendTo('body')
+                }
+            })
+
+
+        })
+    </script>
+</body>
+
+</html>

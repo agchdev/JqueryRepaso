@@ -27,7 +27,7 @@
 
             .imagenes{
                 display: flex;
-                position: relative;
+                position: relative; /* SI MAITE ESTO ES LO QUE TE FALTABA */
                 transition: transform 1s cubic-bezier(.39,.01,.49,.98);
             }
             .next, .prev{
@@ -79,7 +79,7 @@
             var imgTotal = imagenes.length;
 
             function mover(){
-                $('.imagenes').animate({left: `${-inidceActual * 1000}px`}, 1000)
+                $('.imagenes').animate({left: `${-inidceActual * 1000}px`}, 1000) // HOLA MAITE <3
             }
 
             function comp(){

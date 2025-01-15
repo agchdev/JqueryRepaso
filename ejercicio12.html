@@ -1,11 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        nav{
+            display: flex;
+        }
+        p{
+            text-align: center;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <nav>
+        <div class="nav1">
+            <p>Nav1</p>
+            <ul>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, error.</li>
+                <li>Lorem ipsum dolor sit amet consectetur.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis voluptates adipisci unde?</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+            </ul>
+        </div>
+        <div class="nav2">
+            <p>Nav2</p>
+            <ul>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, error.</li>
+                <li>Lorem ipsum dolor sit amet consectetur.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis voluptates adipisci unde?</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+            </ul>
+        </div>
+        <div class="nav3">
+            <p>Nav3</p>
+            <ul>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, error.</li>
+                <li>Lorem ipsum dolor sit amet consectetur.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis voluptates adipisci unde?</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+            </ul>
+        </div>
+        <div class="nav4">
+            <p>Nav4</p>
+            <ul>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, error.</li>
+                <li>Lorem ipsum dolor sit amet consectetur.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis voluptates adipisci unde?</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+            </ul>
+        </div>
+    </nav>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("ul").hide();
+            $(".nav1").on("mouseover", () => {
+                $(".nav1 ul").show();
+            })
+            $(".nav2").on("mouseover", () => {
+                $(".nav2 ul").show();
+            })
+            $(".nav3").on("mouseover", () => {
+                $(".nav3 ul").show();
+            })
+            $(".nav4").on("mouseover", () => {
+                $(".nav4 ul").show();
+            })
+
+            $(".nav1").on("mouseout", () => {
+                $(".nav1 ul").hide();
+            })
+            $(".nav2").on("mouseout", () => {
+                $(".nav2 ul").hide();
+            })
+            $(".nav3").on("mouseout", () => {
+                $(".nav3 ul").hide();
+            })
+            $(".nav4").on("mouseout", () => {
+                $(".nav4 ul").hide();
+            })
+        })
+    </script>
 </body>
+
 </html>

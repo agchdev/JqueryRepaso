@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Preview Form</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        .preview {
+            margin-top: 10px;
+            max-width: 300px;
+            max-height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload and Preview Image</h1>
+    <form id="imageForm">
+        <label for="imageInput">Select an image:</label>
+        <input type="file" id="imageInput" name="image" accept="image/*">
+        <br>
+        <img id="imagePreview" class="preview" src="#" alt="Image Preview" style="display: none;">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        $(document).ready(function () {
+            $("#imageInput").change(function (event) {
+                const file = $("#imageInput").val();
+                console.log(file)
+                if (file) {
+                    $("#imagePreview").attr("src", file).show();
+                } 
+            });
+
+            $("#imageForm").submit(function (event) {
+                event.preventDefault();
+                alert("Form submitted!");
+                
+            });
+        });
+    </script>
+</body>
+</html>

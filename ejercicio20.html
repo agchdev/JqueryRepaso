@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .modal{
+            position: absolute;
+            width: 400px;
+            height: 200px;
+            border: 1px solid black;
+            top: 40%;
+            left: 35%;
+            background-color: rgb(204, 204, 204);
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+        }
+        button{
+            position: absolute;
+            z-index: 100;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('<div></div>').appendTo('body');
+            $('div').attr('class', 'container');
+            $('<div></div>').appendTo('.container');
+            $('div > div').attr('class', 'modal');
+            $('.modal').hide()
+            $('<button>Abrir modal</button>').appendTo('body');
+            $('button').on('click', () => {
+                $('.modal').show()
+            })
+            $('.container').on('click', () => {
+                $('.modal').hide()
+                console.log("hola")
+            })
+
+        })
+    </script>
+</body>
+</html>

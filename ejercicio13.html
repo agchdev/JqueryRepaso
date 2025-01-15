@@ -6,6 +6,23 @@
     <title>Document</title>
 </head>
 <body>
+    <p ></p>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("<button>Click</button>").appendTo("body");
+                $("button").on("click", () => {
+                    $("p").slideToggle(500);
+                })
+            // Se recargue la hora cada segundo
+            let now = new Date();
+            $("p").text(`${now.getHours()} : ${now.getMinutes()} : ${now.getSeconds()}`);
+
+            setInterval(() => {
+                let now = new Date();
+                $("p").text(`${now.getHours()} : ${now.getMinutes()} : ${now.getSeconds()}`);
+            }, 1000);
+        })
+    </script>
 </body>
 </html>

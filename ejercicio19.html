@@ -7,5 +7,15 @@
 </head>
 <body>
     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("<button>Click</button>").appendTo("body");
+            $('button').on('click', () => {
+                $("<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid, vel.</p>").appendTo('body').hide();
+                $('p').fadeIn("slow")
+            })
+        });
+    </script>
 </body>
 </html>

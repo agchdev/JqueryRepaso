@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="pag1">
+        <h1>Pagina 1</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium facere nihil obcaecati ut! Laboriosam atque at eum explicabo possimus ullam accusantium pariatur iste voluptas eos dolore tempora consequatur repellendus sapiente dignissimos harum, quidem voluptatem facilis velit inventore, natus a. Itaque exercitationem facilis natus, quaerat quia sunt non maxime nesciunt voluptatem.</p>
+    </div>
+    <div class="pag2">
+        <h1>Pagina 2</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam, eum adipisci. Eaque nihil porro ea nobis quisquam exercitationem ipsa voluptas? Omnis ut atque eaque voluptas dolores ullam iste ab magnam sunt quae quaerat vitae dicta, architecto assumenda nobis, quam reiciendis a recusandae! Optio nulla excepturi porro expedita quas. Nihil, iure.</p>
+    </div>
+    <div class="pag3">
+        <h1>Pagina 3</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates tenetur quaerat deleniti inventore qui rerum quisquam! Est qui commodi eos amet eaque vero possimus sint, nulla dicta nihil molestiae rem alias corrupti quasi consequuntur porro deserunt minus dignissimos blanditiis inventore error tempora perspiciatis sed quas. Optio illum incidunt deserunt recusandae.</p>
+    </div>
+    <button class="btn1">PAG 1</button>
+    <button class="btn2">PAG 2</button>
+    <button class="btn3">PAG 3</button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('div').hide(); //Por defecto nada visible
+            $(".btn1").on("click", function(){
+                $("div").hide();
+                $(".pag1").show();
+            })
+            $(".btn2").on("click", function(){
+                $("div").hide();
+                $(".pag2").show();
+            })
+            $(".btn3").on("click", function(){
+                $("div").hide();
+                $(".pag3").show();
+            })
+        })
+    </script>
+</body>
+</html>

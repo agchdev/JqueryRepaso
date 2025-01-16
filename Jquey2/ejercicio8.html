@@ -29,7 +29,7 @@
         }
         img{
             position: relative;
-            transition: all .5s ease;
+            /* transition: all .5s ease; */
         }
     </style>
 </head>
@@ -48,6 +48,9 @@
         $(function(){
             var max = $('img').length - 1 
             var indice = 0;
+            function mover(){
+                $('img').animate({left : `${-indice * 1000}px`}, 1000)
+            }
             function comp(){
                 if(indice < 0) indice = max
                 if(indice > max) indice = 0
@@ -56,7 +59,8 @@
                 if($(this).text() == "Prev"){
                     indice--;
                     comp();
-                    $('img').css('transform', `translateX(${-indice * 1000}px)`)
+                    // $('img').css('transform', `translateX(${-indice * 1000}px)`)
+                    mover();
                     console.log(indice)
                 }
             })
@@ -64,7 +68,8 @@
                 if($(this).text() == "Next"){
                     indice++;
                     comp();
-                    $('img').css('transform', `translateX(${-indice * 1000}px)`)
+                    // $('img').css('transform', `translateX(${-indice * 1000}px)`)
+                    mover();
                 }
             })
         })

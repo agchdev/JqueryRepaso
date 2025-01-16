@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <li>perro</li>
+    <li>gato</li>
+    <li>pito</li>
+    <li>genio</li>
+    <li>lampara</li>
+    <li>jesus</li>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+
+            $('input').on('input', function(event){
+                let palabra = event.target.value
+                $('li').each(function(i,e){
+                    if($(e).text().trim().includes(palabra.trim())){
+                        // console.log($(e).text());
+                        $(e).show();
+                    }else{
+                        $(e).hide();
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+</html>
